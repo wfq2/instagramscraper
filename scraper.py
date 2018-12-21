@@ -1,12 +1,10 @@
-import requests,config,json,csv
+import config,json,csv
 from bs4 import BeautifulSoup
 import time,random
 import re
 import database_driver
 
-
-session = requests.session()
-r = session.get('http://instagram.com')
+session = config.get_session()
 
 def get_url(ig_handle):
     return config.BASE_URL + "/" + ig_handle
